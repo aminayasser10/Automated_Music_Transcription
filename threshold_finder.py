@@ -106,9 +106,9 @@ class Threshold_Finder(object):
 if __name__ == '__main__':
     threshold_finder = Threshold_Finder(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
     x, rnorm, average_magnitude = threshold_finder.find_least_squares()
-    print 'rnorm squared: ' + str(rnorm * rnorm)
-    print 'rnorm: ' + str(rnorm)
-    print 'average power: ' + str(average_magnitude ** 2)
+    print('rnorm squared: ' + str(rnorm * rnorm))
+    print('rnorm: ' + str(rnorm))
+    print('average power: ' + str(average_magnitude ** 2))
 
     fft = threshold_finder.get_FFT_of_noise(x, rnorm)
     chord_fft = threshold_finder.get_FFT(threshold_finder.chord)
@@ -116,4 +116,4 @@ if __name__ == '__main__':
     #threshold_finder.plot_power_spectrum(chord_fft)
     #threshold_finder.plot_power_spectrum(first_fft)
     #threshold_finder.plot_power_spectrum(fft)
-    print threshold_finder.get_sum_of_squares(fft)
+    print(threshold_finder.get_sum_of_squares(fft))
