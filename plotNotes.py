@@ -13,7 +13,7 @@ class NotePlotter(object):
 
 
     def __init__(self, wav_file):
-        print 'Inside Note Plotter constructor'
+        print('Inside Note Plotter constructor')
         self.wav_file = wav_file
         self.output_file = wav_file[:-3] + 'ly'
         self.number2note = {
