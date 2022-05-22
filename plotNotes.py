@@ -127,7 +127,7 @@ class NotePlotter(object):
             f.write(lilypond_text)
         command = "lilypond "
         command += self.output_file
-        print command
+        print(command)
         os.system(command)
 
 
@@ -146,7 +146,7 @@ class NotePlotter(object):
             f.write(lilypond_text)
         command = "lilypond "
         command += self.output_file
-        print command
+        print(command)
         os.system(command)
 
 
@@ -169,7 +169,7 @@ class NotePlotter(object):
             file_path = 'note' + str(i) + '.wav'
             detector = MIDI_Detector(directory + '/' + file_path)
             midi_numbers = detector.detect_MIDI_notes()
-            print 'File: ' + str(file_path) + ' MIDI: ' + str(midi_numbers)
+            print('File: ' + str(file_path) + ' MIDI: ' + str(midi_numbers))
             if len(midi_numbers) > 0:
                 lilypond_text += ' < '
                 for n in midi_numbers:
@@ -183,7 +183,7 @@ class NotePlotter(object):
             f.write(lilypond_text)
         command = "lilypond "
         command += self.output_file
-        print command
+        print(command)
         os.system(command)
 
 
