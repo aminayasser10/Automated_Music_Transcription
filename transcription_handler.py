@@ -11,7 +11,7 @@ ONSET_FRAMES_DIR = '/var/www/transcriber_website/frames'
 if __name__ == '__main__':
     while(True):
         music_files = os.listdir(MUSIC_FILES_DIR)
-        print music_files
+        print(music_files)
         if len(music_files) == 0:
             print 'NO MUSIC FILES'
             time.sleep(0.5)
@@ -20,7 +20,7 @@ if __name__ == '__main__':
             os.makedirs(ONSET_FRAMES_DIR)
             transcriber = MusicTranscriber(MUSIC_FILES_DIR, LILYPOND_DIR, ONSET_FRAMES_DIR, music_file)
             transcriber.transcribe()
-            print('MUSIC FILE NAME: %s') % music_file
+            print(('MUSIC FILE NAME: %s') % music_file)
             os.rename(music_file[:-3] + 'pdf', SHEET_NOTES_DIR + '/' + music_file[:-3] + 'pdf')
             os.rename(music_file[:-3] + 'midi', MIDI_DIR + '/' + music_file[:-3] + 'midi')
             os.remove(MUSIC_FILES_DIR + '/' + music_file)
@@ -28,5 +28,5 @@ if __name__ == '__main__':
             command = "timidity "
             command += (MIDI_DIR + '/' + music_file[:-3] + 'midi')
             command += (' -Ow -o ' + MIDI_DIR + '/' + music_file[:-3] + 'wav')
-            print command
+            print(command)
             os.system(command)
