@@ -23,10 +23,10 @@ def readWav():
     params = sound_wave.getparams()
     duration = nframes / float(framerate)
 
-    print "frame rate: %d " % (framerate,)
-    print "nframes: %d" % (nframes,)
-    print "duration: %f seconds" % (duration,)
-    print scipy.array(sound_wave)
+    print("frame rate: %d " % (framerate,))
+    print("nframes: %d" % (nframes,))
+    print("duration: %f seconds" % (duration,))
+    print(scipy.array(sound_wave))
 
     return (sound_wave, nframes, framerate, duration, params)
 
@@ -265,7 +265,7 @@ class MIDI_Detector_Least_Squares_2(object):
         monoChannel = sample.mean(axis=1)
         stft = self.STFT(monoChannel, framerate, self.HAN_WINDOW, self.HOP_SIZE)
         (stft_bin_freqs, stft_magnitudes) = self.get_stft_bin_freqs(stft, framerate)
-        print stft_bin_freqs
+        print(stft_bin_freqs)
         #print self.get_candidates_with_partials(stft_bin_freqs[0], stft_magnitudes[0])
 
         '''
@@ -300,7 +300,7 @@ class MIDI_Detector_Least_Squares_2(object):
         return (stft_binFrequencies, stft_magnitudes)
 
     def get_candidates_with_partials(self, frequencies, magnitudes):
-        print frequencies
+        print(frequencies)
         partial_margin = 11.0                   # Hz
         candidates_freq = []                    # A list of frequencies of each candidate.
         candidates_magnitude = []               # A list of magnitudes of frequencies of each candidate.    
@@ -386,9 +386,9 @@ class MIDI_Detector_Least_Squares_2(object):
         """
 
         framesamp = int(framesz * samplingFreq)
-        print 'FRAMESAMP: ' + str(framesamp)
+        print('FRAMESAMP: ' + str(framesamp))
         hopsamp = int(hop * samplingFreq)
-        print 'HOP SAMP: ' + str(hopsamp)
+        print('HOP SAMP: ' + str(hopsamp))
         # Modification: using Hanning window instead of Hamming - by Pertusa
         w = signal.hann(framesamp)
         X = numpy.array([numpy.fft.fft(w * x[i:i + framesamp])
@@ -562,7 +562,7 @@ class MIDI_Detector_Least_Squares_2(object):
 if __name__ == '__main__':
     MIDI_detector = MIDI_Detector(sys.argv[1])
     midi_notes = MIDI_detector.detect_MIDI_notes()
-    print midi_notes
+    print(midi_notes)
     #pertusa_inesta_midi_notes = MIDI_detector.Pertusa_Inesta_Algorithm()
     #print pertusa_inesta_midi_notes
 
