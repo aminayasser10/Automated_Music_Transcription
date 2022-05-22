@@ -25,9 +25,9 @@ class OnsetFrameSplitter(object):
         os.system('aubioonset -i ' + self.music_file + ' --onset complex > ' + onsets_output_file)
         onsets = [float(x) for x in open(onsets_output_file).read().splitlines()]
         if self.verbose:
-            print 'onsets: '
+            print('onsets: ')
             for o in onsets:
-                print o
+                print(o)
         print('Executed aubioonset function to split the file into onsets')
 
         # Reading in the music wave and getting parameters.
@@ -38,9 +38,9 @@ class OnsetFrameSplitter(object):
         duration = nframes / float(framerate)
 
         if self.verbose:
-            print "nframes: %d" % (nframes,)
-            print "frame rate: %d " % (framerate,)
-            print "duration: %f seconds" % (duration,)
+            print("nframes: %d" % (nframes,))
+            print("frame rate: %d " % (framerate,))
+            print("duration: %f seconds" % (duration,))
 
         onsets.append(duration)
         onsets[0] = 0.0
