@@ -32,7 +32,7 @@ if __name__ == '__main__':
     no_of_samples = sys.argv[2]
     threshold_finder = Average_Threshold_Finder()
     average_noise, sd_noise, avg_power, sd_power = threshold_finder.get_average_noise_threshold(file_with_samples, no_of_samples)
-    print average_noise
-    print sd_noise
-    print avg_power
-    print sd_power
+    print(average_noise)
+    print(sd_noise)
+    print(avg_power)
+    print(sd_power)
