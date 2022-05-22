@@ -193,4 +193,4 @@ class Highest_Peaks_MIDI_Detector(object):
 if __name__ == '__main__':
     MIDI_detector = Highest_Peaks_MIDI_Detector(sys.argv[1])
     midi_notes = MIDI_detector.detect_MIDI_notes()
-    print midi_notes
+    print(midi_notes)
